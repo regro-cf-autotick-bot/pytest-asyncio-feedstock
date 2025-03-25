@@ -13,7 +13,7 @@ source:
     sha256: c4df2a697648241ff39e7f0e4a73050b03f123f760673956cf0d72a4990e312f
     target_directory: dist
   - url: https://github.com/pytest-dev/pytest-asyncio/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: c4df2a697648241ff39e7f0e4a73050b03f123f760673956cf0d72a4990e312f
+    sha256: 7bcd830bed05bc7d10068c49a844b8062af84537b846d61310f3b939ab0d013f
     target_directory: src
 
 build:
