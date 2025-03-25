@@ -34,7 +34,7 @@ requirements:
   run:
     - pytest >=8.2,<9
     - python >=${{ python_min }}
-    - typing_extensions>=4.12
+    - typing_extensions >=4.12
 
 tests:
   - python:
