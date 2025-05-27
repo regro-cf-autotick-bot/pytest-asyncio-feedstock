@@ -56,7 +56,8 @@ tests:
         - pytest-trio
         - python ${{ python_min }}.*
     script:
-      - python run_test.py
+      interpreter: python
+      file: run_test.py
 
 about:
   license: Apache-2.0
