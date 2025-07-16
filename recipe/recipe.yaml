@@ -12,8 +12,6 @@ source:
   - url: https://pypi.org/packages/source/p/pytest-asyncio/pytest_asyncio-${{ version }}.tar.gz
     sha256: 796aa822981e01b68c12e4827b8697108f7205020f24b5793b3c41555dab68ea
     target_directory: dist
-    patches:
-      - 0000-no-setuptools-77.patch
   - url: https://github.com/pytest-dev/pytest-asyncio/archive/refs/tags/v${{ version }}.tar.gz
     sha256: 44702a643ff7d8d3b2bc22da4d4dd996df605f37ba0e4a7276425bc2eaa730a4
     target_directory: src
@@ -29,31 +27,34 @@ requirements:
   host:
     - pip
     - python ${{ python_min }}.*
-    - setuptools
+    - setuptools >=77.0
     - setuptools-scm >=6.2
   run:
     - pytest >=8.2,<9
     - python >=${{ python_min }}
+    # needed for <3.10
+    - backports-asyncio-runner >=1.1,<2
+    # needed for <3.11
     - typing_extensions >=4.12
 
 tests:
   - python:
+      imports: pytest_asyncio
       pip_check: true
       python_version:
         - ${{ python_min }}.*
         - 3.13.*
-      imports: pytest_asyncio
   - files:
       recipe:
         - run_test.py
       source:
         - src/tests/
         - src/setup.cfg
+        - src/pyproject.toml
     requirements:
       run:
         - coverage
         - hypothesis >=5.7.1
-        - pytest-trio
         - python ${{ python_min }}.*
     script:
       interpreter: python
