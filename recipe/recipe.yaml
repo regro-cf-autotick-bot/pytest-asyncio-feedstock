@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.0.0"
+  version: "1.1.0"
 
 package:
   name: pytest-asyncio
@@ -10,12 +10,12 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/p/pytest-asyncio/pytest_asyncio-${{ version }}.tar.gz
-    sha256: d15463d13f4456e1ead2594520216b225a16f781e144f8fdf6c5bb4667c48b3f
+    sha256: 796aa822981e01b68c12e4827b8697108f7205020f24b5793b3c41555dab68ea
     target_directory: dist
     patches:
       - 0000-no-setuptools-77.patch
   - url: https://github.com/pytest-dev/pytest-asyncio/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: fd0235c0c60badfb2f845942d19c54ce0280d1cea073ec1ec36037321c900fd8
+    sha256: 44702a643ff7d8d3b2bc22da4d4dd996df605f37ba0e4a7276425bc2eaa730a4
     target_directory: src
 
 build:
