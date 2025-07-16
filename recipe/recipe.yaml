@@ -32,10 +32,10 @@ requirements:
   run:
     - pytest >=8.2,<9
     - python >=${{ python_min }}
-    # needed for <3.10
-    - backports-asyncio-runner >=1.1,<2
     # needed for <3.11
     - typing_extensions >=4.12
+    # needed for <3.10
+    - backports.asyncio.runner >=1.1,<2
 
 tests:
   - python:
@@ -49,8 +49,6 @@ tests:
         - run_test.py
       source:
         - src/tests/
-        - src/setup.cfg
-        - src/pyproject.toml
     requirements:
       run:
         - coverage
