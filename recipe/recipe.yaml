@@ -34,7 +34,7 @@ requirements:
     - python >=${{ python_min }}
     # needed for <3.11
     - typing_extensions >=4.12
-    # needed for <3.10
+    # needed for <3.13
     - backports.asyncio.runner >=1.1,<2
 
 tests:
