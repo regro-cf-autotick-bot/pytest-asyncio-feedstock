@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.1.0"
+  version: "1.2.0"
 
 package:
   name: pytest-asyncio
@@ -10,10 +10,10 @@ package:
 
 source:
   - url: https://pypi.org/packages/source/p/pytest-asyncio/pytest_asyncio-${{ version }}.tar.gz
-    sha256: 796aa822981e01b68c12e4827b8697108f7205020f24b5793b3c41555dab68ea
+    sha256: c609a64a2a8768462d0c99811ddb8bd2583c33fd33cf7f21af1c142e824ffb57
     target_directory: dist
   - url: https://github.com/pytest-dev/pytest-asyncio/archive/refs/tags/v${{ version }}.tar.gz
-    sha256: 44702a643ff7d8d3b2bc22da4d4dd996df605f37ba0e4a7276425bc2eaa730a4
+    sha256: 8c2f599c88c9417b539628c7dc538c465829c31d634e39e1972f6dccd71b31a5
     target_directory: src
 
 build:
@@ -34,7 +34,7 @@ requirements:
     - python >=${{ python_min }}
     # needed for <3.11
     - typing_extensions >=4.12
-    # needed for <3.10
+    # needed for <3.13
     - backports.asyncio.runner >=1.1,<2
 
 tests:
