@@ -1,7 +1,7 @@
 import sys
 from subprocess import call
 
-FAIL_UNDER = "86"
+FAIL_UNDER = "91"
 COV = ["coverage"]
 RUN = ["run", "--source=pytest_asyncio", "--branch", "-m"]
 PYTEST = ["pytest", "-vv", "--color=yes", "--tb=long"]
@@ -26,8 +26,8 @@ K = ["-k", f"not ({SKIP_OR})"]
 
 if __name__ == "__main__":
     sys.exit(
-        # run the tests
-        call([*COV, *RUN, *PYTEST, *K], cwd="src")
-        # maybe run coverage
-        or call([*COV, *REPORT], cwd="src")
+        # run the tests...
+        call([*COV, *RUN, *PYTEST, *K])
+        # ... maybe report coverage
+        or call([*COV, *REPORT])
     )
